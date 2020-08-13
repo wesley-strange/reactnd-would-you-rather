@@ -1,6 +1,20 @@
 let users = {
+  swaggyprophet: {
+    id: 'swaggyprophet',
+    password: 'password',
+    name: 'Swaggy Prophet',
+    avatarURL: '../images/duke-santa.jpg',
+    answers: {
+      "8xf0y6ziyjabvozdd253nd": 'optionOne',
+      "6ni6ok3ym7mf1p33lnez": 'optionTwo',
+      "am8ehyc8byjqgar0jgpub9": 'optionTwo',
+      "loxhs1bqm25b708cmbf3g": 'optionTwo'
+    },
+    questions: []
+  },
   sarahedo: {
     id: 'sarahedo',
+    password: 'password',
     name: 'Sarah Edo',
     avatarURL: '../images/duke-hawaiian.jpg',
     answers: {
@@ -13,6 +27,7 @@ let users = {
   },
   tylermcginnis: {
     id: 'tylermcginnis',
+    password: 'password',
     name: 'Tyler McGinnis',
     avatarURL: '../images/duke-santa.jpg',
     answers: {
@@ -23,6 +38,7 @@ let users = {
   },
   johndoe: {
     id: 'johndoe',
+    password: 'password',
     name: 'John Doe',
     avatarURL: '../images/duke-toy.jpg',
     answers: {

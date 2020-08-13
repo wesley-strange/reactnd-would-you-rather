@@ -1,0 +1,123 @@
+/* Login form styling adapted from https://codepen.io/Devel0per95/pen/rjOpdx */
+:root {
+  --ghost-white: #f7f7ff;
+  --metallic-seaweed: #1f7a8c;
+  --outrageous-orange: #f96e46;
+  --russian-violet: #392759;
+  --black-coffee: #3a2e39;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background-color: rgba(31,122,140,0.75);
+}
+
+.login-window {
+  background-color: var(--ghost-white);
+  width: 400px;
+  margin: 50px auto;
+  border-radius: 25px;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+.login-title {
+  font-size: 40px;
+  color: var(--metallic-seaweed);
+  text-shadow: 1px 2px 0 #999999, 3px 5px 2px rgba(0,0,0,0.1);
+}
+
+.login-greeting {
+  color: var(--black-coffee);
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+form.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.username {
+  width: 80%;
+  color: var(--black-coffee);
+  font-weight: 800;
+  font-size: 15px;
+  text-align: center;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.05);
+  border-radius: 25px;
+  margin: 0 0 25px 0;
+}
+
+.password {
+  width: 80%;
+  color: var(--black-coffee);
+  font-weight: 800;
+  font-size: 15px;
+  text-align: center;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.05);
+  border-radius: 25px;
+  margin: 0 0 25px 0;
+}
+
+.username:focus, .password:focus {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.submit {
+  cursor: pointer;
+  background: rgba(31,122,140,1);
+  color: #fff;
+  padding: 10px 40px;
+  font-size: 13px;
+  border-radius: 25px;
+}
+
+.submit:hover {
+  background: rgba(31,122,140,0.8);
+}
+
+.submit:active {
+  background: var(--black-coffee);
+}
+
+.create {
+  font-size: 14px;
+  color: var(--outrageous-orange);
+  padding: 10px 0;
+}
+
+.create:hover {
+  cursor: pointer;
+  color: #cb5c3b;
+}
+
+.create:active {
+  cursor: pointer;
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .main {
+    width: 300px;
+  }
+
+  .submit {
+    margin: 0 30%;
+  }
+
+  .login-title {
+    font-size: 25px;
+  }
+}

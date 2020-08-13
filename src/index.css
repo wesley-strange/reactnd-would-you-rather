@@ -1,4 +1,13 @@
+:root {
+  --ghost-white: #f7f7ff;
+  --metallic-seaweed: #1f7a8c;
+  --outrageous-orange: #f96e46;
+  --russian-violet: #392759;
+  --black-coffee: #3a2e39;
+}
+
 body {
+  background-color: var(--ghost-white);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
