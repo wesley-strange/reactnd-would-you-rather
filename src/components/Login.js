@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import LoginUser from './LoginUser'
 
 class Login extends Component {
   render() {
@@ -8,9 +9,11 @@ class Login extends Component {
         <h3>Select a user from the drop-down to login:</h3>
         <select name='userid'>
           {this.props.userIds.map((id) => (
-            <option key={id} value={id}>{id}</option>
+            <LoginUser key={id} id={id} />
           ))}
         </select>
+        <button>Log in</button>
+
       </div>
     )
   }
