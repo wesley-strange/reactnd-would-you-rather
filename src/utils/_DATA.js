@@ -216,3 +216,33 @@ export function _saveQuestionAnswer ({ authedUser, qid, answer }) {
     }, 500)
   })
 }
+
+function formatUser ({ username, password, name }) {
+  return {
+    id: username,
+    password,
+    name,
+    avatarURL: '../images/duke-santa.jpg',
+    answers: [],
+    questions: []
+  }
+}
+
+export function _saveUser ({ username, password, name }) {
+  return new Promise((res, rej) => {
+    const formattedUser = formatUser({
+      username,
+      password,
+      name
+    })
+
+    setTimeout(() => {
+      users = {
+        ...users,
+        [formattedUser.id]: formattedUser,
+      }
+
+      res(formattedUser)
+    }, 1000)
+  })
+}
