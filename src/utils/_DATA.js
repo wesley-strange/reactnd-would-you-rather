@@ -56,7 +56,7 @@ let questions = {
     author: 'sarahedo',
     timestamp: 1467166872634,
     optionOne: {
-      votes: ['sarahedo'],
+      votes: ['sarahedo', 'swaggyprophet'],
       text: 'have horrible short term memory',
     },
     optionTwo: {
@@ -73,7 +73,7 @@ let questions = {
       text: 'become a superhero',
     },
     optionTwo: {
-      votes: ['johndoe', 'sarahedo'],
+      votes: ['johndoe', 'sarahedo', 'swaggyprophet'],
       text: 'become a supervillain'
     }
   },
@@ -86,7 +86,7 @@ let questions = {
       text: 'be telekinetic',
     },
     optionTwo: {
-      votes: ['sarahedo'],
+      votes: ['sarahedo', 'swaggyprophet'],
       text: 'be telepathic'
     }
   },
@@ -99,7 +99,7 @@ let questions = {
       text: 'be a front-end developer',
     },
     optionTwo: {
-      votes: ['sarahedo'],
+      votes: ['sarahedo', 'swaggyprophet'],
       text: 'be a back-end developer'
     }
   },

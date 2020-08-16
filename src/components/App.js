@@ -4,6 +4,7 @@ import { handleInitialData } from '../actions/shared'
 import '../styles/App.css';
 import Login from './Login'
 import CreateUser from './CreateUser'
+import QuestionList from './QuestionList'
 
 class App extends Component {
   componentDidMount() {
@@ -15,7 +16,7 @@ class App extends Component {
       <div className="App">
         {this.props.loading === true
           ? null
-          : <CreateUser />}
+          : <QuestionList />}
       </div>
     );
   }
