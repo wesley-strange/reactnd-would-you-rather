@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Question from './Question'
+import '../styles/QuestionList.css';
 
 class QuestionList extends Component {
   state = {
@@ -35,19 +37,18 @@ class QuestionList extends Component {
           </button>
         </div>
         <div>
-          <h3 className='center'>Questions</h3>
-          <ul className='dashboard-list'>
+          <ul className='question-list'>
             {answered
               ? (
                 answeredQuestions.map((question) => (
                   <li key={question.id}>
-                    {question.id}
+                    <Question id={question.id} />
                   </li>
                 ))
               )
               : unansweredQuestions.map((question) => (
                 <li key={question.id}>
-                  {question.id}
+                  <Question id={question.id} />
                 </li>
               ))}
           </ul>

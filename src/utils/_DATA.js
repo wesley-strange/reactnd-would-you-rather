@@ -3,7 +3,7 @@ let users = {
     id: 'swaggyprophet',
     password: 'password',
     name: 'Swaggy Prophet',
-    avatarURL: '../images/duke-santa.jpg',
+    avatarURL: 'https://i.ibb.co/Tw6bM7w/duke-hawaiian.jpg',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -16,7 +16,7 @@ let users = {
     id: 'sarahedo',
     password: 'password',
     name: 'Sarah Edo',
-    avatarURL: '../images/duke-hawaiian.jpg',
+    avatarURL: 'https://i.ibb.co/mX3f5mW/duke-santa.jpg',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -29,7 +29,7 @@ let users = {
     id: 'tylermcginnis',
     password: 'password',
     name: 'Tyler McGinnis',
-    avatarURL: '../images/duke-santa.jpg',
+    avatarURL: 'https://i.ibb.co/bz96VTc/duke-toy.jpg',
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -40,7 +40,7 @@ let users = {
     id: 'johndoe',
     password: 'password',
     name: 'John Doe',
-    avatarURL: '../images/duke-toy.jpg',
+    avatarURL: 'https://i.ibb.co/Tw6bM7w/duke-hawaiian.jpg',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
