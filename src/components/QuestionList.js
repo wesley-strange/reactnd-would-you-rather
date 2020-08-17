@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Question from './Question'
+import QuestionResults from './QuestionResults'
 import '../styles/QuestionList.css';
 
 class QuestionList extends Component {
@@ -42,13 +43,13 @@ class QuestionList extends Component {
               ? (
                 answeredQuestions.map((question) => (
                   <li key={question.id}>
-                    <Question id={question.id} />
+                    <QuestionResults id={question.id} />
                   </li>
                 ))
               )
               : unansweredQuestions.map((question) => (
                 <li key={question.id}>
-                  <Question id={question.id} />
+                  <QuestionResults id={question.id} />
                 </li>
               ))}
           </ul>

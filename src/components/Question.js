@@ -4,7 +4,7 @@ import '../styles/Question.css';
 
 class Question extends Component {
   render() {
-    const { question, answer, authorAvatar } = this.props
+    const { question, authorAvatar } = this.props
     const { id, author, optionOne, optionTwo } = question
 
     return (
@@ -24,16 +24,9 @@ class Question extends Component {
 function mapStateToProps ({authedUser, users, questions}, { id }) {
   const question = questions[id]
   const authorAvatar = users[question.author].avatarURL
-  const user = 'swaggyprophet'
-  const answer = question.optionOne.votes.includes(user)
-    ? "one"
-    : question.optionTwo.votes.includes(user)
-      ? "two"
-      : null
 
   return {
     question,
-    answer,
     authorAvatar
   }
 }
