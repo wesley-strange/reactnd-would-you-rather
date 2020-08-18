@@ -60,7 +60,7 @@ let questions = {
       text: 'have horrible short term memory',
     },
     optionTwo: {
-      votes: [],
+      votes: ['johndoe'],
       text: 'have horrible long term memory'
     }
   },
@@ -95,7 +95,7 @@ let questions = {
     author: 'tylermcginnis',
     timestamp: 1482579767190,
     optionOne: {
-      votes: [],
+      votes: ['johndoe'],
       text: 'be a front-end developer',
     },
     optionTwo: {

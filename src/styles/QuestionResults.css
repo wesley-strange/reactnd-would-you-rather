@@ -35,6 +35,16 @@ body {
   padding: 0px;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+
+.result-option:hover {
+  transform: scale(1.01);
+  opacity: 0.95;
+}
+
+.result-option[disabled] {
+  pointer-events: none;
 }
 
 .result-one {

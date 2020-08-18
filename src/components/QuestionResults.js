@@ -3,26 +3,62 @@ import { connect } from 'react-redux'
 import '../styles/QuestionResults.css';
 
 class QuestionResults extends Component {
+
+  handleClick = (e) => {
+    console.log("you just selected an option")
+  }
+
   render() {
     const { question, answer, authorAvatar } = this.props
-    const { id, author, optionOne, optionTwo } = question
-    const hidden = true
+    const { author, optionOne, optionTwo } = question
+
+    const isAnswered = answer ? true : false
+
+    const optionOneVotes = optionOne.votes.length
+    const optionTwoVotes = optionTwo.votes.length
+    const totalVotes = optionOneVotes + optionTwoVotes
+    const optionOneSelected = answer === "one" ? 'selected' : ''
+    const optionTwoSelected = answer === "two" ? 'selected' : ''
 
     return (
       <div className='result'>
         <div className='result-title'>Would You Rather...</div>
-        <div className='result-option result-one selected'>
-          <p className='result-results'>3 people (75%) voted for this</p>
+        <div
+          className={`result-option result-one ${optionOneSelected}`}
+          onClick={this.handleClick}
+          disabled={isAnswered}
+        >
+          <p className='result-results'>
+            {
+              isAnswered && optionOneVotes !== 0
+                ? `${optionOneVotes} (${Math.round((optionOneVotes/totalVotes)*100)}%) voted for this`
+                : ''
+            }
+          </p>
           <p className='result-text'>{optionOne.text}</p>
-          <p className='result-selected' hidden={false}>YOUR SELECTION</p>
+          <p className='result-selected'>{answer === 'one' ? 'YOUR SELECTION' : ''}</p>
         </div>
-        <div className='result-option result-two'>
-          <p className='result-results'>1 people (25%) voted for this</p>
+        <div
+          className={`result-option result-two ${optionTwoSelected}`}
+          onClick={this.handleClick}
+          disabled={isAnswered}
+        >
+          <p className='result-results'>
+            {
+              isAnswered && optionTwoVotes !== 0
+                ? `${optionTwoVotes} (${Math.round((optionTwoVotes/totalVotes)*100)}%) voted for this`
+                : ''
+            }
+          </p>
           <p className='result-text'>{optionTwo.text}</p>
-          <p className='result-selected' hidden={true}>YOUR SELECTION</p>
+          <p className='result-selected'>{answer === 'two' ? 'YOUR SELECTION' : ''}</p>
         </div>
         <div className='result-author'>
-          <img className='result-author-avatar' src={authorAvatar} />
+          <img
+            className='result-author-avatar'
+            src={authorAvatar}
+            alt={`Avatar of ${authorAvatar}`}
+          />
           <p>Submitted by {author}</p>
         </div>
       </div>

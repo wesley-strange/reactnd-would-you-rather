@@ -5,7 +5,7 @@ import '../styles/Question.css';
 class Question extends Component {
   render() {
     const { question, authorAvatar } = this.props
-    const { id, author, optionOne, optionTwo } = question
+    const { author, optionOne, optionTwo } = question
 
     return (
       <div className='question'>
@@ -13,7 +13,11 @@ class Question extends Component {
         <div className='question-option option-one'>{optionOne.text}</div>
         <div className='question-option option-two'>{optionTwo.text}</div>
         <div className='question-author'>
-          <img className='question-author-avatar' src={authorAvatar} />
+          <img
+            className='question-author-avatar'
+            src={authorAvatar}
+            alt={`Avatar of ${authorAvatar}`}
+          />
           <p>Submitted by {author}</p>
         </div>
       </div>
