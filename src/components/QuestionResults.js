@@ -4,7 +4,8 @@ import '../styles/QuestionResults.css';
 
 class QuestionResults extends Component {
 
-  handleClick = (e) => {
+  handleSelection = (e) => {
+    console.log(e.target.getAttribute('name'))
     console.log("you just selected an option")
   }
 
@@ -24,8 +25,9 @@ class QuestionResults extends Component {
       <div className='result'>
         <div className='result-title'>Would You Rather...</div>
         <div
+          name='option-one'
           className={`result-option result-one ${optionOneSelected}`}
-          onClick={this.handleClick}
+          onClick={this.handleSelection}
           disabled={isAnswered}
         >
           <p className='result-results'>
@@ -39,8 +41,9 @@ class QuestionResults extends Component {
           <p className='result-selected'>{answer === 'one' ? 'YOUR SELECTION' : ''}</p>
         </div>
         <div
+          name='option-two'
           className={`result-option result-two ${optionTwoSelected}`}
-          onClick={this.handleClick}
+          onClick={this.handleSelection}
           disabled={isAnswered}
         >
           <p className='result-results'>

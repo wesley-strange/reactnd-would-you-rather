@@ -29,9 +29,7 @@ body {
 .result-option {
   display: grid;
   grid-template-rows: 30px 215px 30px;
-  color: var(--ghost-white);
   border: 2px solid var(--black-coffee);
-  font-size: 36px;
   padding: 0px;
   justify-content: center;
   align-items: center;
@@ -39,7 +37,8 @@ body {
 }
 
 .result-option:hover {
-  transform: scale(1.01);
+  /* transform: scale(1.01); */
+  border: 2px solid lightgrey;
   opacity: 0.95;
 }
 
@@ -60,6 +59,12 @@ body {
 .result-results {
   color: lightgrey;
   font-size: 24px;
+}
+
+.result-text {
+  color: var(--ghost-white);
+  font-size: 36px;
+  pointer-events: none;
 }
 
 .result-selected {
