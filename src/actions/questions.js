@@ -10,22 +10,11 @@ export function receiveQuestions (questions) {
   }
 }
 
-function updateQuestion (question) {
+export function updateQuestion (uid, qid, answer) {
   return {
     type: UPDATE_QUESTION,
-    question
-  }
-}
-
-export function handleSaveQuestionAnswer (question, answer) {
-  return (dispatch, getState) => {
-    const { authedUser } = getState()
-
-    return _saveQuestionAnswer({
-      authedUser,
-      qid: question.id,
-      answer
-    })
-      .then(() => dispatch(updateQuestion(question)))
+    uid,
+    qid,
+    answer
   }
 }

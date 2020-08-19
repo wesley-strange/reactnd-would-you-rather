@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import '../styles/QuestionResults.css';
+import '../styles/QuestionResults.css'
+import { handleSaveQuestionAnswer } from '../actions/shared'
 
 class QuestionResults extends Component {
 
   handleSelection = (e) => {
-    console.log(e.target.getAttribute('name'))
-    console.log("you just selected an option")
+    e.preventDefault()
+
+    const { dispatch, question } = this.props
+
+    dispatch(handleSaveQuestionAnswer(question, e.target.getAttribute('name')))
   }
 
   render() {
@@ -25,7 +29,7 @@ class QuestionResults extends Component {
       <div className='result'>
         <div className='result-title'>Would You Rather...</div>
         <div
-          name='option-one'
+          name='optionOne'
           className={`result-option result-one ${optionOneSelected}`}
           onClick={this.handleSelection}
           disabled={isAnswered}
@@ -41,7 +45,7 @@ class QuestionResults extends Component {
           <p className='result-selected'>{answer === 'one' ? 'YOUR SELECTION' : ''}</p>
         </div>
         <div
-          name='option-two'
+          name='optionTwo'
           className={`result-option result-two ${optionTwoSelected}`}
           onClick={this.handleSelection}
           disabled={isAnswered}
