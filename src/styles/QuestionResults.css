@@ -37,7 +37,6 @@ body {
 }
 
 .result-option:hover {
-  /* transform: scale(1.01); */
   border: 2px solid lightgrey;
   opacity: 0.95;
 }

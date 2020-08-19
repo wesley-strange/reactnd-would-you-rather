@@ -1,7 +1,7 @@
-import { _getUsers, _getQuestions, _saveQuestionAnswer } from '../utils/_DATA'
+import { _getUsers, _getQuestions, _saveQuestionAnswer, _saveQuestion } from '../utils/_DATA'
 import { setAuthedUser } from '../actions/authedUser'
-import { receiveUsers, updateUser } from '../actions/users'
-import { receiveQuestions, updateQuestion } from '../actions/questions'
+import { receiveUsers, updateUserAnswers, updateUserQuestions } from '../actions/users'
+import { receiveQuestions, updateQuestion, addQuestion } from '../actions/questions'
 
 const AUTHED_ID = 'swaggyprophet'
 
@@ -28,8 +28,24 @@ export function handleSaveQuestionAnswer (question, answer) {
       answer
     })
       .then(() => {
-        dispatch(updateUser(authedUser, question.id, answer))
+        dispatch(updateUserAnswers(authedUser, question.id, answer))
         dispatch(updateQuestion(authedUser, question.id, answer))
+      })
+  }
+}
+
+export function handleCreateQuestion (optionOneText, optionTwoText) {
+  return (dispatch, getState) => {
+    const { authedUser } = getState()
+
+    return _saveQuestion({
+      optionOneText,
+      optionTwoText,
+      author: authedUser
+    })
+      .then((formattedQuestion) => {
+        dispatch(updateUserQuestions(formattedQuestion.author, formattedQuestion.id))
+        dispatch(addQuestion(formattedQuestion))
       })
   }
 }
