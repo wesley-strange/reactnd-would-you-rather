@@ -73,7 +73,9 @@ class QuestionResults extends Component {
   }
 }
 
-function mapStateToProps ({authedUser, users, questions}, { id }) {
+function mapStateToProps ({authedUser, users, questions}, props) {
+  const { id } = props.match.params
+
   const question = questions[id]
   const authorAvatar = users[question.author].avatarURL
   const user = 'swaggyprophet'

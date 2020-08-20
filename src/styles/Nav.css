@@ -6,6 +6,11 @@
   color: var(--ghost-white);
 }
 
+.nav a {
+  color: var(--ghost-white);
+  text-decoration: none;
+}
+
 .nav-left {
   display: flex;
   flex-direction: row;

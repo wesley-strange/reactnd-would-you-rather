@@ -43,13 +43,13 @@ class QuestionList extends Component {
               ? (
                 answeredQuestions.map((question) => (
                   <li key={question.id}>
-                    <QuestionResults id={question.id} />
+                    <Question id={question.id} />
                   </li>
                 ))
               )
               : unansweredQuestions.map((question) => (
                 <li key={question.id}>
-                  <QuestionResults id={question.id} />
+                  <Question id={question.id} />
                 </li>
               ))}
           </ul>

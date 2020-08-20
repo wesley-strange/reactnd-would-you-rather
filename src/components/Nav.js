@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import '../styles/Nav.css';
 
@@ -9,13 +10,19 @@ class Nav extends Component {
       <nav className='nav'>
         <ul className='nav-left'>
           <li>
-            Home
+            <NavLink to='/questionlist' exact activeClassName='active'>
+              Home
+            </NavLink>
           </li>
           <li>
-            Create Question
+            <NavLink to='/createquestion' exact activeClassName='active'>
+              Create Question
+            </NavLink>
           </li>
           <li>
-            Leaderboard
+            <NavLink to='/leaderboard' exact activeClassName='active'>
+              Leaderboard
+            </NavLink>
           </li>
         </ul>
         <ul className='nav-right'>
@@ -23,7 +30,9 @@ class Nav extends Component {
             User
           </li>
           <li>
-            Logout
+            <NavLink to='/login' exact activeClassName='active'>
+              Logout
+            </NavLink>
           </li>
         </ul>
       </nav>

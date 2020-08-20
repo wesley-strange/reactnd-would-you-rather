@@ -14,6 +14,7 @@ body {
     "bottom bottom";
   border: 3px solid var(--black-coffee);
   border-radius: 10px;
+  text-decoration: none;
 }
 
 .question-title {

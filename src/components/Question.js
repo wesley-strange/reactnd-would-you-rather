@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import '../styles/Question.css';
+import { Link, withRouter } from 'react-router-dom'
 
 class Question extends Component {
   render() {
     const { question, authorAvatar } = this.props
-    const { author, optionOne, optionTwo } = question
+    const { author, optionOne, optionTwo, id } = question
 
     return (
-      <div className='question'>
+      <Link to={`/question/${id}`} className='question'>
         <div className='question-title'>Would You Rather...</div>
         <div className='question-option option-one'>{optionOne.text}</div>
         <div className='question-option option-two'>{optionTwo.text}</div>
@@ -20,7 +21,7 @@ class Question extends Component {
           />
           <p>Submitted by {author}</p>
         </div>
-      </div>
+      </Link>
     )
   }
 }

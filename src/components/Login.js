@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import '../styles/Login.css';
 import { handleLogin } from '../actions/authedUser'
@@ -35,9 +37,11 @@ class Login extends Component {
   }
 
   render() {
-    const { username, password } = this.state
+    const { username, password, toHome } = this.state
 
-    // redirect to homepage after login
+    if (toHome === true) {
+      return <Redirect to='/' />
+    }
 
     return (
       <div className="login-window">
@@ -63,7 +67,7 @@ class Login extends Component {
             onChange={this.handleChange}
           />
           <button className="submit" type='submit' align="center">Log in</button>
-          <p className="create" align="center">New user? No problem! Create an account</p>
+          <Link to='createuser' className="create" align="center">New user? No problem! Create an account</Link>
         </form>
       </div>
     )

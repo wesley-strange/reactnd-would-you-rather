@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import '../styles/CreateQuestion.css'
 import { handleCreateQuestion } from '../actions/shared'
@@ -35,9 +36,11 @@ class CreateQuestion extends Component {
   }
 
   render() {
-    const { optionOne, optionTwo } = this.state
+    const { optionOne, optionTwo, toHome } = this.state
 
-    // redirect to homepage after submitting a questino
+    if (toHome === true) {
+      return <Redirect to='/' />
+    }
 
     return (
       <form className='new-question' onSubmit={this.handleSubmit}>

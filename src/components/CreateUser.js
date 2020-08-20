@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import '../styles/CreateUser.css';
 import { handleCreateUser } from '../actions/users'
@@ -27,7 +28,7 @@ class CreateUser extends Component {
     const { dispatch } = this.props
 
     dispatch(handleCreateUser(username, password, name))
-    
+
     this.setState(() => ({
       username: '',
       password: '',
@@ -37,9 +38,11 @@ class CreateUser extends Component {
   }
 
   render() {
-    const { username, password, name } = this.state
+    const { username, password, name, toLogin } = this.state
 
-    // redirect to login page after user is created
+    if (toLogin === true) {
+      return <Redirect to='/login' />
+    }
 
     return (
       <div className="create-window">
