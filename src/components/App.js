@@ -7,6 +7,7 @@ import CreateUser from './CreateUser'
 import QuestionList from './QuestionList'
 import CreateQuestion from './CreateQuestion'
 import Leaderboard from './Leaderboard'
+import Nav from './Nav'
 
 class App extends Component {
   componentDidMount() {
@@ -18,7 +19,7 @@ class App extends Component {
       <div className="App">
         {this.props.loading === true
           ? null
-          : <Leaderboard />}
+          : <Nav />}
       </div>
     );
   }
