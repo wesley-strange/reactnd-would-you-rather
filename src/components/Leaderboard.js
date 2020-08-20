@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import '../styles/Leaderboard.css';
+import LeaderboardEntry from './LeaderboardEntry'
 
 class Leaderboard extends Component {
   render() {
@@ -19,17 +20,7 @@ class Leaderboard extends Component {
         <ul className='leaderboard'>
           {sortedUsers.map((user) => (
             <li key={user.id}>
-              <div className='leaderboard-entry'>
-                <img
-                  className='leaderboard-avatar'
-                  src={user.avatarURL}
-                  alt={`Avatar of ${user.name}`}
-                />
-                <h4 className='leaderboard-username'>{user.name}</h4>
-                <p className='leaderboard-answers'>{Object.keys(user.answers).length}</p>
-                <p className='leaderboard-questions'>{user.questions.length}</p>
-                <p className='total'>{Object.keys(user.answers).length + user.questions.length}</p>
-              </div>
+              <LeaderboardEntry id={user.id} />
             </li>
           ))}
         </ul>
