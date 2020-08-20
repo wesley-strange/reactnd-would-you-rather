@@ -5,10 +5,7 @@ let users = {
     name: 'Swaggy Prophet',
     avatarURL: 'https://i.ibb.co/Tw6bM7w/duke-hawaiian.jpg',
     answers: {
-      "8xf0y6ziyjabvozdd253nd": 'optionOne',
-      "6ni6ok3ym7mf1p33lnez": 'optionTwo',
-      "am8ehyc8byjqgar0jgpub9": 'optionTwo',
-      "loxhs1bqm25b708cmbf3g": 'optionTwo'
+      "8xf0y6ziyjabvozdd253nd": 'optionOne'
     },
     questions: []
   },
