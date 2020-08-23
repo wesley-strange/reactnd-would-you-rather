@@ -27,12 +27,12 @@ class Login extends Component {
     const { username, password } = this.state
     const { dispatch } = this.props
 
-    const toHome = dispatch(handleLogin(username, password))
+    dispatch(handleLogin(username, password))
 
     this.setState(() => ({
       username: '',
       password: '',
-      toHome: toHome
+      toHome: true
     }))
   }
 
@@ -40,7 +40,7 @@ class Login extends Component {
     const { username, password, toHome } = this.state
 
     if (toHome === true) {
-      return <Redirect to='/' />
+      return <Redirect to='/questionlist' />
     }
 
     return (

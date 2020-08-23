@@ -1,3 +1,5 @@
+let authedUser = null
+
 let users = {
   swaggyprophet: {
     id: 'swaggyprophet',
@@ -70,7 +72,7 @@ let questions = {
       text: 'become a superhero',
     },
     optionTwo: {
-      votes: ['johndoe', 'sarahedo', 'swaggyprophet'],
+      votes: ['johndoe', 'sarahedo'],
       text: 'become a supervillain'
     }
   },
@@ -83,7 +85,7 @@ let questions = {
       text: 'be telekinetic',
     },
     optionTwo: {
-      votes: ['sarahedo', 'swaggyprophet'],
+      votes: ['sarahedo'],
       text: 'be telepathic'
     }
   },
@@ -96,7 +98,7 @@ let questions = {
       text: 'be a front-end developer',
     },
     optionTwo: {
-      votes: ['sarahedo', 'swaggyprophet'],
+      votes: ['sarahedo'],
       text: 'be a back-end developer'
     }
   },
@@ -141,6 +143,12 @@ export function _getUsers () {
 export function _getQuestions () {
   return new Promise((res, rej) => {
     setTimeout(() => res({...questions}), 1000)
+  })
+}
+
+export function _getAuthedUser () {
+  return new Promise((res, rej) => {
+    setTimeout(() => res(authedUser), 1000)
   })
 }
 
@@ -240,6 +248,16 @@ export function _saveUser ({ username, password, name }) {
       }
 
       res(formattedUser)
-    }, 1000)
+    }, 500)
+  })
+}
+
+export function _saveAuthedUser ({ username }) {
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      authedUser = username
+
+      res(username)
+    }, 500)
   })
 }

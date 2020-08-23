@@ -60,14 +60,14 @@ class QuestionList extends Component {
 }
 
 function mapStateToProps ({authedUser, questions}) {
-  const user = 'swaggyprophet'
   const answeredQuestions = Object.values(questions).filter((question) => (
-    question.optionOne.votes.includes(user)
-    || question.optionTwo.votes.includes(user))
+    question.optionOne.votes.includes(authedUser)
+    || question.optionTwo.votes.includes(authedUser))
   )
+  
   const unansweredQuestions = Object.values(questions).filter((question) => (
-    !question.optionOne.votes.includes(user)
-    && !question.optionTwo.votes.includes(user))
+    !question.optionOne.votes.includes(authedUser)
+    && !question.optionTwo.votes.includes(authedUser))
   )
 
   return {

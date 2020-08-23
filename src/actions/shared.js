@@ -1,16 +1,16 @@
-import { _getUsers, _getQuestions, _saveQuestionAnswer, _saveQuestion } from '../utils/_DATA'
+import { _getUsers, _getQuestions, _getAuthedUser, _saveQuestionAnswer, _saveQuestion } from '../utils/_DATA'
 import { setAuthedUser } from '../actions/authedUser'
 import { receiveUsers, updateUserAnswers, updateUserQuestions } from '../actions/users'
 import { receiveQuestions, updateQuestion, addQuestion } from '../actions/questions'
 
-const AUTHED_ID = 'swaggyprophet'
+const AUTHED_ID = ''
 
 export function handleInitialData () {
   return (dispatch) => {
     return Promise.all([
       _getUsers(),
       _getQuestions()
-    ]).then(([ users, questions ]) => {
+    ]).then(([ users, questions, authedUser ]) => {
       dispatch(receiveUsers(users))
       dispatch(receiveQuestions(questions))
       dispatch(setAuthedUser(AUTHED_ID))

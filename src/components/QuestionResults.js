@@ -78,10 +78,9 @@ function mapStateToProps ({authedUser, users, questions}, props) {
 
   const question = questions[id]
   const authorAvatar = users[question.author].avatarURL
-  const user = 'swaggyprophet'
-  const answer = question.optionOne.votes.includes(user)
+  const answer = question.optionOne.votes.includes(authedUser)
     ? "one"
-    : question.optionTwo.votes.includes(user)
+    : question.optionTwo.votes.includes(authedUser)
       ? "two"
       : null
 
