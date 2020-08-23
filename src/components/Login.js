@@ -40,6 +40,7 @@ class Login extends Component {
     const { username, password, toHome } = this.state
 
     if (toHome === true) {
+      console.log('hi')
       return <Redirect to='/questionlist' />
     }
 

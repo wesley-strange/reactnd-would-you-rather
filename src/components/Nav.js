@@ -35,11 +35,11 @@ class Nav extends Component {
         </ul>
         <ul className='nav-right'>
           <li>
-            User
+            {this.props.authedUser}
           </li>
           <li>
             <NavLink to='/login' exact activeClassName='active' onClick={this.handleLogout}>
-              Logout
+              {this.props.authorAvatar ? 'Logout' : null}
             </NavLink>
           </li>
         </ul>
@@ -48,4 +48,15 @@ class Nav extends Component {
   }
 }
 
-export default connect()(Nav)
+function mapStateToProps ({authedUser, users}) {
+  const authorAvatar = authedUser !== '' && authedUser !== null
+    ? users[authedUser].avatarURL
+    : null
+
+  return {
+    authedUser,
+    authorAvatar
+  }
+}
+
+export default connect(mapStateToProps)(Nav)
