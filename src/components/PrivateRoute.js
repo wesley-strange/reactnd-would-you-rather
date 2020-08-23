@@ -7,11 +7,9 @@ import {
   withRouter
 } from 'react-router-dom'
 
-const fakeAuth = true
-
-export const PrivateRoute = ({ component: Component, ...rest }) => (
+export const PrivateRoute = ({ component: Component, auth, ...rest }) => (
   <Route {...rest} render={(props) => (
-    fakeAuth === true
+    auth === true
       ? <Component {...props} />
       : <Redirect to={{
           pathname: '/login',

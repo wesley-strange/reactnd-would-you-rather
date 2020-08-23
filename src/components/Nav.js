@@ -2,10 +2,18 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import '../styles/Nav.css';
+import { setAuthedUser } from '../actions/authedUser'
 
 class Nav extends Component {
-  render() {
+  handleLogout = (e) => {
+    e.preventDefault()
 
+    const { dispatch } = this.props
+
+    dispatch(setAuthedUser(''))
+  }
+
+  render() {
     return (
       <nav className='nav'>
         <ul className='nav-left'>
@@ -30,7 +38,7 @@ class Nav extends Component {
             User
           </li>
           <li>
-            <NavLink to='/login' exact activeClassName='active'>
+            <NavLink to='/login' exact activeClassName='active' onClick={this.handleLogout}>
               Logout
             </NavLink>
           </li>
