@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import '../styles/Question.css';
-import { Link, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class Question extends Component {
   render() {

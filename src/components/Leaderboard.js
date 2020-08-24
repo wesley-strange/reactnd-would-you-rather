@@ -12,7 +12,7 @@ class Leaderboard extends Component {
         <h3 className='center'>Leaderboard</h3>
         <div className='leaderboard-headers'>
           <p className='leaderboard-header'></p>
-          <h4 className='leaderboard-header'></h4>
+          <p className='leaderboard-header'></p>
           <p className='leaderboard-header'>Answers</p>
           <p className='leaderboard-header'>Questions</p>
           <p className='leaderboard-header total'>Total</p>

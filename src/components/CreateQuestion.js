@@ -26,7 +26,7 @@ class CreateQuestion extends Component {
     const { optionOne, optionTwo } = this.state
     const { dispatch } = this.props
 
-    const promise = dispatch(handleCreateQuestion(optionOne, optionTwo))
+    dispatch(handleCreateQuestion(optionOne, optionTwo))
     .then(() => {
       this.setState(() => ({
         optionOne: '',

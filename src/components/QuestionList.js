@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Question from './Question'
-import QuestionResults from './QuestionResults'
 import '../styles/QuestionList.css';
 
 class QuestionList extends Component {
@@ -63,12 +62,12 @@ function mapStateToProps ({authedUser, questions}) {
   const answeredQuestions = Object.values(questions).filter((question) => (
     question.optionOne.votes.includes(authedUser)
     || question.optionTwo.votes.includes(authedUser))
-  )
-  
+  ).sort((a, b) => b.timestamp - a.timestamp)
+
   const unansweredQuestions = Object.values(questions).filter((question) => (
     !question.optionOne.votes.includes(authedUser)
     && !question.optionTwo.votes.includes(authedUser))
-  )
+  ).sort((a, b) => b.timestamp - a.timestamp)
 
   return {
     answeredQuestions,

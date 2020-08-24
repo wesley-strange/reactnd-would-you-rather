@@ -27,7 +27,7 @@ class CreateUser extends Component {
     const { username, password, name } = this.state
     const { dispatch } = this.props
 
-    const promise = dispatch(handleCreateUser(username, password, name))
+    dispatch(handleCreateUser(username, password, name))
     .then(() => {
       this.setState(() => ({
         username: '',

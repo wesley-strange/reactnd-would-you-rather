@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import { Link, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { handleLogin } from '../actions/authedUser'
 import { connect } from 'react-redux'
 import '../styles/Login.css';
@@ -27,7 +27,7 @@ class Login extends Component {
     const { username, password } = this.state
     const { dispatch } = this.props
 
-    let toHome = dispatch(handleLogin(username, password))
+    dispatch(handleLogin(username, password))
     .then((toHome) => {
       this.setState(() => ({
         username: '',

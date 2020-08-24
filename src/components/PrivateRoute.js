@@ -1,11 +1,5 @@
 import React from "react"
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-  Redirect,
-  withRouter
-} from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 
 export const PrivateRoute = ({ component: Component, auth, ...rest }) => (
   <Route {...rest} render={(props) => (

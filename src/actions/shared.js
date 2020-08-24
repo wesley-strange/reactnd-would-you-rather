@@ -1,4 +1,4 @@
-import { _getUsers, _getQuestions, _getAuthedUser, _saveQuestionAnswer, _saveQuestion } from '../utils/_DATA'
+import { _getUsers, _getQuestions, _saveQuestionAnswer, _saveQuestion } from '../utils/_DATA'
 import { setAuthedUser } from '../actions/authedUser'
 import { receiveUsers, updateUserAnswers, updateUserQuestions } from '../actions/users'
 import { receiveQuestions, updateQuestion, addQuestion } from '../actions/questions'
@@ -23,7 +23,7 @@ export function handleInitialData () {
 
 export function handleSaveQuestionAnswer (question, answer) {
   return (dispatch, getState) => {
-    const { authedUser, users } = getState()
+    const { authedUser } = getState()
 
     dispatch(updateUserAnswers(authedUser, question.id, answer))
     dispatch(updateQuestion(authedUser, question.id, answer))
