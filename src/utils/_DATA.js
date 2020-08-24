@@ -227,7 +227,7 @@ function formatUser ({ username, password, name }) {
     id: username,
     password,
     name,
-    avatarURL: '../images/duke-santa.jpg',
+    avatarURL: 'https://i.ibb.co/mX3f5mW/duke-santa.jpg',
     answers: [],
     questions: []
   }
@@ -257,7 +257,7 @@ export function _saveAuthedUser ({ username }) {
     setTimeout(() => {
       authedUser = username
 
-      res(username)
+      res(authedUser)
     }, 500)
   })
 }

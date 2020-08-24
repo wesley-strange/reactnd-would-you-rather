@@ -13,19 +13,25 @@ export function handleLogin (username, password) {
   return (dispatch, getState) => {
     const { users } = getState()
 
-
     if (users[username] && (users[username].password === password)) {
       return _saveAuthedUser({username})
-        .then(() => {
-          dispatch(setAuthedUser(username))
-          // alert('Login successful')
+        .then((authedUser) => {
+          dispatch(setAuthedUser(authedUser))
         })
-        .catch(() => {
-          // alert('Error occured during login. Please try again.')
+        .then(() => {
+          alert('Login successful')
+          return true
+        })
+        .catch((err) => {
+          alert('Error occured during login. Please try again.')
+          return false
         })
     } else {
-      alert('Username or password invalid.')
-      return false
+      return new Promise((res, rej) => {
+        alert('Username or password invalid.')
+        res(false)
+      })
+
     }
   }
 }

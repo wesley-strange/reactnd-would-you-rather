@@ -27,20 +27,24 @@ class Login extends Component {
     const { username, password } = this.state
     const { dispatch } = this.props
 
-    dispatch(handleLogin(username, password))
+    let toHome = dispatch(handleLogin(username, password))
+    .then((toHome) => {
+      this.setState(() => ({
+        username: '',
+        password: '',
+        toHome
+      }))
+    })
+    .catch((err) => {
+      console.log(err)
+    })
 
-    this.setState(() => ({
-      username: '',
-      password: '',
-      toHome: true
-    }))
   }
 
   render() {
     const { username, password, toHome } = this.state
 
     if (toHome === true) {
-      console.log('hi')
       return <Redirect to='/questionlist' />
     }
 

@@ -39,7 +39,7 @@ class CreateQuestion extends Component {
     const { optionOne, optionTwo, toHome } = this.state
 
     if (toHome === true) {
-      return <Redirect to='/' />
+      return <Redirect to='/questionlist' />
     }
 
     return (
