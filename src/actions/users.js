@@ -1,4 +1,5 @@
 import { _saveUser } from '../utils/_DATA'
+import { showLoading, hideLoading } from 'react-redux-loading'
 
 export const RECEIVE_USERS = 'RECEIVE_USERS'
 export const CREATE_USER = 'CREATE_USER'
@@ -38,7 +39,7 @@ export function updateUserQuestions (uid, qid) {
 
 export function handleCreateUser (username, password, name, avatarURL) {
   return (dispatch) => {
-    // add in showloading and hideloading
+    dispatch(showLoading())
 
     return _saveUser({
       username,
@@ -46,6 +47,9 @@ export function handleCreateUser (username, password, name, avatarURL) {
       name,
       avatarURL
     })
-      .then((user) => dispatch(createUser(user)))
+      .then((user) => {
+        dispatch(createUser(user))
+        dispatch(hideLoading())
+      })
   }
 }

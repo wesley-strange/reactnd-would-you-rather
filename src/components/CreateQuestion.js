@@ -26,13 +26,14 @@ class CreateQuestion extends Component {
     const { optionOne, optionTwo } = this.state
     const { dispatch } = this.props
 
-    dispatch(handleCreateQuestion(optionOne, optionTwo))
-
-    this.setState(() => ({
-      optionOne: '',
-      optionTwo: '',
-      toHome: true
-    }))
+    const promise = dispatch(handleCreateQuestion(optionOne, optionTwo))
+    .then(() => {
+      this.setState(() => ({
+        optionOne: '',
+        optionTwo: '',
+        toHome: true
+      }))
+    })
   }
 
   render() {

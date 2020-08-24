@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import { Link, withRouter } from 'react-router-dom'
+import { handleLogin } from '../actions/authedUser'
 import { connect } from 'react-redux'
 import '../styles/Login.css';
-import { handleLogin } from '../actions/authedUser'
 
 class Login extends Component {
   state = {
