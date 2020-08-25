@@ -34,6 +34,7 @@ class Login extends Component {
         password: '',
         toHome
       }))
+      this.props.changeColor('white')
     })
     .catch((err) => {
       console.log(err)

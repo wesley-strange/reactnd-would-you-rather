@@ -1,5 +1,9 @@
-body {
-  background-color: var(--ghost-white);
+.question-buttons {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .question-list {
@@ -7,4 +11,21 @@ body {
   justify-content: center;
   grid-gap: 25px;
   list-style: none;
+  padding: 0;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  padding-right: 10;
+  font-size: 18px;
+  /*optional*/
+  /*input has OS specific font-family*/
+  color: var(--outrageous-orange);
+  cursor: pointer;
+}
+
+.toggle-button:disabled {
+  color: var(--black-coffee);
+  cursor: auto;
 }

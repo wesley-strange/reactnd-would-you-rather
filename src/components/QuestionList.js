@@ -20,9 +20,10 @@ class QuestionList extends Component {
 
     return (
       <div>
-        <div>
+        <div className='question-buttons'>
           <button
             name='unanswered'
+            className='toggle-button'
             disabled={!answered}
             onClick={this.toggleAnswered}
           >
@@ -30,6 +31,7 @@ class QuestionList extends Component {
           </button>
           <button
             name='answered'
+            className='toggle-button'
             disabled={answered}
             onClick={this.toggleAnswered}
           >

@@ -14,6 +14,14 @@ import Nav from './Nav'
 import { PrivateRoute } from './PrivateRoute'
 
 class App extends Component {
+  state = {
+    color: 'rgba(31,122,140,0.75)'
+  }
+
+  changeColor = (color) => {
+    this.setState({ color });
+  };
+
   componentDidMount() {
     this.props.dispatch(handleInitialData())
   }
@@ -23,17 +31,41 @@ class App extends Component {
       <Router>
         <Fragment>
           <LoadingBar />
-          <div className='container'>
-            <Nav />
+          <div className='container' style={{ background: this.state.color }}>
+            <Nav changeColor={this.changeColor} />
             {this.props.authedUser === null
               ? null
-              : <div>
-                  <Route path='/login' exact component={Login} />
-                  <Route path='/createuser' exact component={CreateUser} />
-                  <PrivateRoute path='/questionlist' exact component={QuestionList} auth={!this.props.unauth} />
-                  <PrivateRoute path='/question/:id' exact component={QuestionResults} auth={!this.props.unauth} />
-                  <PrivateRoute path='/leaderboard' exact component={Leaderboard} auth={!this.props.unauth} />
-                  <PrivateRoute path='/createquestion' exact component={CreateQuestion} auth={!this.props.unauth} />
+              : <div className='main'>
+                  <Route
+                    path='/login' exact
+                    render={(props) => (
+                      <Login {...props} changeColor={this.changeColor} />
+                    )}
+                  />
+                  <Route
+                    path='/createuser' exact
+                    component={CreateUser}
+                  />
+                  <PrivateRoute
+                    path='/questionlist' exact
+                    component={QuestionList}
+                    auth={!this.props.unauth}
+                  />
+                  <PrivateRoute
+                    path='/question/:id' exact
+                    component={QuestionResults}
+                    auth={!this.props.unauth}
+                  />
+                  <PrivateRoute
+                    path='/leaderboard' exact
+                    component={Leaderboard}
+                    auth={!this.props.unauth}
+                  />
+                  <PrivateRoute
+                    path='/add' exact
+                    component={CreateQuestion}
+                    auth={!this.props.unauth}
+                  />
                 </div>}
           </div>
         </Fragment>

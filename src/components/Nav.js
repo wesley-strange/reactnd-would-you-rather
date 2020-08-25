@@ -5,12 +5,14 @@ import '../styles/Nav.css';
 import { setAuthedUser } from '../actions/authedUser'
 
 class Nav extends Component {
+
   handleLogout = (e) => {
     e.preventDefault()
 
     const { dispatch } = this.props
 
     dispatch(setAuthedUser(''))
+    this.props.changeColor('rgba(31,122,140,0.75)')
   }
 
   render() {
@@ -23,7 +25,7 @@ class Nav extends Component {
             </NavLink>
           </li>
           <li>
-            <NavLink to='/createquestion' exact activeClassName='active'>
+            <NavLink to='/add' exact activeClassName='active'>
               Create Question
             </NavLink>
           </li>

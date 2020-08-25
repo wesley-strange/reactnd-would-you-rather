@@ -14,9 +14,9 @@ class LeaderboardEntry extends Component {
           alt={`Avatar of ${user.name}`}
         />
         <h4 className='leaderboard-username'>{user.name}</h4>
-        <p className='leaderboard-answers'>{Object.keys(user.answers).length}</p>
-        <p className='leaderboard-questions'>{user.questions.length}</p>
-        <p className='total'>{Object.keys(user.answers).length + user.questions.length}</p>
+        <p className='leaderboard-answers center'>{Object.keys(user.answers).length}</p>
+        <p className='leaderboard-questions center'>{user.questions.length}</p>
+        <p className='total center'>{Object.keys(user.answers).length + user.questions.length}</p>
       </div>
     )
   }

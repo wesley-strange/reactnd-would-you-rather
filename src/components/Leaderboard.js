@@ -13,9 +13,9 @@ class Leaderboard extends Component {
         <div className='leaderboard-headers'>
           <p className='leaderboard-header'></p>
           <p className='leaderboard-header'></p>
-          <p className='leaderboard-header'>Answers</p>
-          <p className='leaderboard-header'>Questions</p>
-          <p className='leaderboard-header total'>Total</p>
+          <p className='leaderboard-header center'>Answers</p>
+          <p className='leaderboard-header center'>Questions</p>
+          <p className='leaderboard-header total center'>Total</p>
         </div>
         <ul className='leaderboard'>
           {sortedUsers.map((user) => (
