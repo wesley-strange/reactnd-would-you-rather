@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import LoadingBar from 'react-redux-loading'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
@@ -10,6 +10,7 @@ import QuestionList from './QuestionList'
 import QuestionResults from './QuestionResults'
 import CreateQuestion from './CreateQuestion'
 import Leaderboard from './Leaderboard'
+import NoMatchPage from './NoMatch'
 import Nav from './Nav'
 import { PrivateRoute } from './PrivateRoute'
 
@@ -36,36 +37,39 @@ class App extends Component {
             {this.props.authedUser === null
               ? null
               : <div className='main'>
-                  <Route
-                    path='/login' exact
-                    render={(props) => (
-                      <Login {...props} changeColor={this.changeColor} />
-                    )}
-                  />
-                  <Route
-                    path='/createuser' exact
-                    component={CreateUser}
-                  />
-                  <PrivateRoute
-                    path='/questionlist' exact
-                    component={QuestionList}
-                    auth={!this.props.unauth}
-                  />
-                  <PrivateRoute
-                    path='/question/:id' exact
-                    component={QuestionResults}
-                    auth={!this.props.unauth}
-                  />
-                  <PrivateRoute
-                    path='/leaderboard' exact
-                    component={Leaderboard}
-                    auth={!this.props.unauth}
-                  />
-                  <PrivateRoute
-                    path='/add' exact
-                    component={CreateQuestion}
-                    auth={!this.props.unauth}
-                  />
+                  <Switch>
+                    <Route
+                      path='/login' exact
+                      render={(props) => (
+                        <Login {...props} changeColor={this.changeColor} />
+                      )}
+                    />
+                    <Route
+                      path='/createuser' exact
+                      component={CreateUser}
+                    />
+                    <PrivateRoute
+                      path='/questionlist' exact
+                      component={QuestionList}
+                      auth={!this.props.unauth}
+                    />
+                    <PrivateRoute
+                      path='/question/:id' exact
+                      component={QuestionResults}
+                      auth={!this.props.unauth}
+                    />
+                    <PrivateRoute
+                      path='/leaderboard' exact
+                      component={Leaderboard}
+                      auth={!this.props.unauth}
+                    />
+                    <PrivateRoute
+                      path='/add' exact
+                      component={CreateQuestion}
+                      auth={!this.props.unauth}
+                    />
+                    <Route component={NoMatchPage} />
+                  </Switch>
                 </div>}
           </div>
         </Fragment>
