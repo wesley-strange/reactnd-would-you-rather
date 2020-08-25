@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { handleLogin } from '../actions/authedUser'
 import { connect } from 'react-redux'
@@ -35,6 +35,9 @@ class Login extends Component {
         toHome
       }))
       this.props.changeColor('white')
+      this.props.history.location.state
+            ? this.props.history.push(this.props.history.location.state.from.pathname)
+            : this.props.history.push('/questionlist')
     })
     .catch((err) => {
       console.log(err)
@@ -45,9 +48,9 @@ class Login extends Component {
   render() {
     const { username, password, toHome } = this.state
 
-    if (toHome === true) {
-      return <Redirect to='/questionlist' />
-    }
+    // if (toHome === true) {
+    //   return <Redirect to='/questionlist' />
+    // }
 
     return (
       <div className="login-window">
@@ -80,4 +83,4 @@ class Login extends Component {
   }
 }
 
-export default connect()(Login)
+export default withRouter(connect()(Login))
