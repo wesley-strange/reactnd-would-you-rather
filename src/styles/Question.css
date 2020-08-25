@@ -65,3 +65,26 @@
   height: 40px;
   border-radius: 20px;
 }
+
+@media (max-width: 600px) {
+  .question {
+    width: 350px;
+    height: 475px;
+    grid-template-columns: 350px;
+    grid-template-rows: 25px 200px 200px 50px;
+    grid-template-areas:
+      "top"
+      "one"
+      "two"
+      "bottom";
+    border: 1px solid var(--black-coffee);
+  }
+
+  .option-one {
+    grid-area: one;
+  }
+
+  .option-two {
+    grid-area: two;
+  }
+}

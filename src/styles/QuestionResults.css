@@ -89,3 +89,29 @@
   height: 60px;
   border-radius: 30px;
 }
+
+
+@media (max-width: 600px) {
+  .result {
+    width: 350px;
+    height: 475px;
+    grid-template-columns: 350px;
+    grid-template-rows: 50px 275px 275px 75px;
+    grid-template-areas:
+      "top"
+      "left"
+      "right"
+      "bottom";
+    border: 1px solid var(--black-coffee);
+  }
+
+  .result-author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+  }
+
+  .result-author {
+    font-size: 20px;
+  }
+}

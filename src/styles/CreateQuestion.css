@@ -90,3 +90,21 @@
   position:relative;
 	top:1px;
 }
+
+@media (max-width: 600px) {
+  .new-question {
+    display: grid;
+    width: 350px;
+    height: 675px;
+    grid-template-columns: 350px;
+    grid-template-rows: 50px 275px 275px 75px;
+    grid-template-areas:
+      "top"
+      "left"
+      "right"
+      "bottom";
+    border: 3px solid var(--black-coffee);
+    border-radius: 10px;
+    margin-top: 25px;
+  }
+}
