@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import '../styles/Nav.css';
 import { setAuthedUser } from '../actions/authedUser'
 
 class Nav extends Component {
-
   handleLogout = (e) => {
     e.preventDefault()
 
@@ -13,6 +12,7 @@ class Nav extends Component {
 
     dispatch(setAuthedUser(''))
     this.props.changeColor('rgba(31,122,140,0.75)')
+    this.props.history.push('/')
   }
 
   render() {
@@ -20,7 +20,7 @@ class Nav extends Component {
       <nav className='nav'>
         <ul className='nav-left'>
           <li>
-            <NavLink to='/questionlist' exact activeClassName='active'>
+            <NavLink to='/' exact activeClassName='active'>
               Home
             </NavLink>
           </li>
@@ -61,4 +61,4 @@ function mapStateToProps ({authedUser, users}) {
   }
 }
 
-export default connect(mapStateToProps)(Nav)
+export default withRouter(connect(mapStateToProps)(Nav))

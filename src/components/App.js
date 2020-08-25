@@ -33,7 +33,7 @@ class App extends Component {
         <Fragment>
           <LoadingBar />
           <div className='container' style={{ background: this.state.color }}>
-            <Nav changeColor={this.changeColor} />
+            <Nav changeColor={this.changeColor}/>
             {this.props.authedUser === null
               ? null
               : <div className='main'>
@@ -49,7 +49,7 @@ class App extends Component {
                       component={CreateUser}
                     />
                     <PrivateRoute
-                      path='/questionlist' exact
+                      path='/' exact
                       component={QuestionList}
                       auth={!this.props.unauth}
                     />

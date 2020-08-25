@@ -26,21 +26,27 @@ class CreateQuestion extends Component {
     const { optionOne, optionTwo } = this.state
     const { dispatch } = this.props
 
-    dispatch(handleCreateQuestion(optionOne, optionTwo))
-    .then(() => {
-      this.setState(() => ({
-        optionOne: '',
-        optionTwo: '',
-        toHome: true
-      }))
-    })
+    if (optionOne !== '' && optionTwo !== '' && optionOne !== optionTwo) {
+      dispatch(handleCreateQuestion(optionOne, optionTwo))
+      .then(() => {
+        this.setState(() => ({
+          optionOne: '',
+          optionTwo: '',
+          toHome: true
+        }))
+      })
+    } else {
+      alert("Options cannot be blank and cannot be the same. Try again.")
+    }
+
+
   }
 
   render() {
     const { optionOne, optionTwo, toHome } = this.state
 
     if (toHome === true) {
-      return <Redirect to='/questionlist' />
+      return <Redirect to='/' />
     }
 
     return (
